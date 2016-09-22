@@ -1,0 +1,46 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{helvet}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{00A0}{~}
+\setlength{\topmargin}{-3.5cm}
+\setlength{\textheight}{29.5cm}
+\setlength{\oddsidemargin}{-15mm}
+\setlength{\textwidth}{19cm}
+
+\pagestyle{empty}
+\newcommand{\header}[4]{\vspace*{2cm}
+\raisebox{-4cm}{\includegraphics[height=10cm]{logo-icfp-2016-final.pdf}}
+{\fontsize{50}{60}\selectfont #1}
+\vspace{1.5cm}
+\begin{center}
+\fontsize{40}{50}\selectfont #4 \vspace{3cm} \\
+\LARGE \ #2\ \bigskip \\
+\LARGE #3
+\end{center}
+\newpage \ \vfill}
+
+\newcommand{\weekday}[1]{\begin{center} #1 \end{center}}
+\newcommand{\closeday}{}
+\newcommand{\overview}[3]
+{\noindent \makebox[3.5cm][l]{#1}\makebox[16cm][l]{#2} Page~#3 \\}
+
+\newcommand{\emptysession}[2]
+{\noindent \colorbox{brown!30}{\makebox[3cm][c]{#1}\hspace{3mm}%
+\makebox[15.4cm][l]{\bfseries #2}} \medskip \\}
+\newcommand{\session}[2]
+{\noindent \colorbox{brown!30}{\makebox[3cm][c]{#1}\hspace{3mm}%
+\makebox[15.4cm][l]{\bfseries #2}} \medskip \\
+\noindent\begin{tabular}{@{~~~}cp{17cm}}}
+\newcommand{\slot}[2]{#1 & \large #2 \\}
+\newcommand{\authors}[1]{\multicolumn{2}{@{\hspace{2cm}}p{16.5cm}}{#1}
+  \vspace{1ex} \\}
+\newcommand{\closesession}{\end{tabular} \bigskip \\}
+\let\author=\textit
+\newcommand{\outputmap}{}
+
+\begin{document}
+\sf
+\input{schedule2}
+\end{document}
