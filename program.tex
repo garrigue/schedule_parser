@@ -1,0 +1,34 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{00A0}{~}
+\setlength{\topmargin}{-2cm}
+\setlength{\textheight}{25cm}
+\setlength{\oddsidemargin}{-5mm}
+\setlength{\textwidth}{17cm}
+
+\newcommand{\header}[4]{{\noindent \makebox[2cm][l]{#1} \hfill #2
+    \hfill \makebox[2cm][r]{#3\hspace{-1mm}} \vspace{-1ex} \\ \rule{\textwidth}{1pt}
+    \begin{center} \Large #4 \end{center}} \vspace{5ex}}
+\newcommand{\weekday}[1]{\begin{center} #1 \end{center}}
+\newcommand{\closeday}{}
+\newcommand{\overview}[3]
+{\noindent \makebox[3.5cm][l]{#1}\makebox[12cm][l]{#2} Page~#3 \\}
+
+\newcommand{\emptysession}[2]
+{\noindent \colorbox{gray!30}{\makebox[2.5cm][c]{#1}\hspace{3mm}%
+\makebox[13.9cm][l]{\bfseries #2}} \medskip \\}
+\newcommand{\session}[2]
+{\noindent \colorbox{gray!30}{\makebox[2.5cm][c]{#1}\hspace{3mm}%
+\makebox[13.9cm][l]{\bfseries #2}} \medskip \\
+\noindent\begin{tabular}{@{~~~}cp{15cm}}}
+\newcommand{\slot}[2]{#1 & #2 \\}
+\newcommand{\authors}[1]{\multicolumn{2}{@{\hspace{2cm}}p{14.5cm}}{#1} \\}
+\newcommand{\closesession}{\end{tabular} \bigskip \\}
+\let\author=\textit
+\newcommand{\outputmap}{}
+
+\begin{document}
+\sf
+\input{schedule}
+\end{document}
